@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+       
+        header {
+            background-color: #e0c6a7;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            animation: slide 5s infinite alternate;
+        }
+        
+        @keyframes slide {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+
+        .right-menu {display: flex; align-items: center;}
+        
+        nav ul {list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: right;}
+
+        nav ul li {margin: 0 10px;}
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: right;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #dbb382;
+        }
+
+        fieldset, legend{text-align: center;}
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: bisque;
+            margin-bottom: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {background-color: #e0c6a7; color: #000; text-align: center; padding: 10px 0; margin-top: 360px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="ETEC.jpg" alt="logo da etec"></div>
+        <div class="right-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>  
+                    <li><a href="#Sobre">Sobre</a></li>
+                    <li><a href="listagem.html">Cadastrados</a></li>
+                    <li><a href="#Contato">Contato</a></li>
+                </ul>
+            </nav><br>
+        </div>
+    </header>
+
+    <div class="content">
+        <fieldset>
+            <legend>Cadastro</legend>
+            <form id="meuFormulario" method="get" action="processar_formulario.html">
+                <center>
+                    <table border="0">
+                        <tr>
+                            <td><label for="marca">Marca:</label></td>
+                            <td><input type="text" id="marca" name="marca" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="modelo">Modelo:</label></td>
+                            <td><input type="text" id="modelo" name="modelo" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="cor">Cor:</label></td>
+                            <td><input type="text" id="cor" name="cor" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="armazenamento">Armazenamento (GB):</label></td>
+                            <td><input type="number" id="armazenamento" name="armazenamento"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="sistemaOperacional">Sistema Operacional:</label></td>
+                            <td>
+                                <select id="sistemaOperacional" name="sistemaOperacional" required>
+                                    <option value="android">Android</option>
+                                    <option value="ios">iOS</option>
+                                    <option value="windows">Windows</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="anoLancamento">Ano de Lançamento:</label></td>
+                            <td><input type="number" id="anoLancamento" name="anoLancamento" min="2000" max="2024" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Termo:</label></td>
+                            <td>
+                                <input type="checkbox" name="termo">
+                                <label>Aceito os termos do contrato</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Cadastrar">
+                                <input type="reset" value="Limpar">
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </form>
+        </fieldset>
+    </div>
+    <footer>
+        <p>&copy; 2024 Adriano Wisley da Silva. Todo os direitos reservados.</p>
+    </footer>
+</body>
+</html>
